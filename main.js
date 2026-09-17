@@ -20,22 +20,32 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   });
 })();
 
-// nav scrollspy
+// nav scrollspy: highlight the section whose top has most recently passed the header
 (function () {
   var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
   var targets = links
     .map(function (a) { return document.querySelector(a.getAttribute('href')); })
     .filter(Boolean);
-  if (!targets.length || !('IntersectionObserver' in window)) return;
+  if (!targets.length) return;
 
-  var obs = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (!e.isIntersecting) return;
-      links.forEach(function (a) {
-        a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id);
-      });
+  var ticking = false;
+  function update() {
+    ticking = false;
+    var line = window.scrollY + 120;
+    var current = null;
+    targets.forEach(function (t) {
+      if (t.offsetTop <= line) current = t.id;
     });
-  }, { rootMargin: '-45% 0px -50% 0px' });
-
-  targets.forEach(function (t) { obs.observe(t); });
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 8) {
+      current = targets[targets.length - 1].id;
+    }
+    links.forEach(function (a) {
+      a.classList.toggle('active', current !== null && a.getAttribute('href') === '#' + current);
+    });
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+  }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
 })();
