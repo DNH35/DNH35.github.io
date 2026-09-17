@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Duy Nguyen — Research &amp; Quantitative Work</title>
+<meta name="description" content="Duy Nguyen — Caltech CS &amp; Information and Data Science. Research in generative modeling and time-series representation learning; quantitative signal research.">
+<meta property="og:title" content="Duy Nguyen — Research &amp; Quantitative Work">
+<meta property="og:description" content="Caltech CS &amp; IDS. Generative modeling, time-series representation learning, quantitative signal research.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>∿</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="mark" href="#top">DN</a>
+    <nav class="nav">
+      <a href="#research">Research</a>
+      <a href="#quant">Quant</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+    </nav>
+    <button id="theme" class="theme" type="button" aria-label="Toggle color theme">
+      <span class="theme-ico" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<section id="top" class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Caltech &middot; B.S. Computer Science &amp; Information and Data Science</p>
+    <h1>Duy Nguyen</h1>
+    <p class="lede">
+      I build <em>generative models for time series</em> — flow matching and spectral operator
+      architectures that learn representations of signals which are noisy, non-stationary, and
+      sampled at whatever resolution the instrument happened to use. That work spans neural
+      decoding at Caltech and price-series signal research in equities.
+    </p>
+    <ul class="links">
+      <li><a href="mailto:dhnguyen@caltech.edu">dhnguyen@caltech.edu</a></li>
+      <li><a href="https://github.com/DNH35">github.com/DNH35</a></li>
+      <li><a href="duy-nguyen-resume.pdf">Resume (PDF)</a></li>
+    </ul>
+    <div class="stats">
+      <div class="stat"><span class="n">2</span><span class="l">NeurIPS 2025 workshop papers<br>(one Spotlight) + TMLR</span></div>
+      <div class="stat"><span class="n">4.1</span><span class="l">GPA / 4.0<br>Caltech, 2022–2026</span></div>
+      <div class="stat"><span class="n">3</span><span class="l">Research internships<br>NVIDIA, Stratus, Google</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="research" class="band">
+  <div class="wrap">
+    <h2 class="sec"><span class="num">01</span> Research</h2>
+    <p class="sec-note">Anima AI + Science Lab, Yisong Yue Lab (Caltech), Eva Dyer Lab (Georgia Tech). Jun 2024 – Jun 2026.</p>
+
+    <article class="entry">
+      <div class="entry-meta">
+        <span class="tag tag-pub">NeurIPS 2025 Workshop</span>
+        <span class="tag tag-pub">TMLR</span>
+        <span class="when">Anima AI + Science Lab</span>
+      </div>
+      <div class="entry-body">
+        <h3>Resolution-invariant representation learning for time series</h3>
+        <p>
+          Signals arrive at different sampling rates, and most self-supervised time-series models
+          quietly assume they do not. I developed a framework that pairs <strong>flow
+          matching</strong> with <strong>STFT / Superlet</strong> time–frequency transforms, so the
+          learned representation is tied to the signal's spectral structure rather than to its
+          sampling grid. The objective supports multi-level supervision, letting a single pretrained
+          backbone serve tasks at several granularities.
+        </p>
+        <p>
+          It outperforms masked-autoencoding and Fourier Neural Operator baselines across three
+          different domains — <em>neural decoding, sleep-stage classification, and human activity
+          recognition</em> — which is the part that mattered: the gain is not a single-dataset
+          artifact. A grid search over feature-extraction window sizes and layer configurations
+          added a further <strong>20%</strong> on top.
+        </p>
+        <ul class="chips">
+          <li>Flow matching</li><li>STFT / Superlet</li><li>Neural operators</li><li>Multi-level supervision</li><li>PyTorch</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="entry-meta">
+        <span class="tag tag-spot">NeurIPS 2025 Workshop &middot; Spotlight</span>
+        <span class="when">Yue Lab &amp; Dyer Lab</span>
+      </div>
+      <div class="entry-body">
+        <h3>Positional encoding for neural time series without electrode geometry</h3>
+        <p>
+          Masked-autoencoding transformers on neural recordings typically need to know where each
+          electrode sits in 3D space — a requirement that breaks transfer across subjects, rigs, and
+          implant layouts. I designed a positional encoding that recovers the needed structure from
+          the <strong>1D time series alone</strong>, removing the dependence on electrode coordinates
+          entirely.
+        </p>
+        <p>
+          Downstream classification and decoding improved <strong>15%</strong> over supervised
+          baselines, and the resulting model pretrains on datasets whose geometry was never recorded.
+        </p>
+        <ul class="chips">
+          <li>Self-supervised learning</li><li>Masked autoencoders</li><li>Transformers</li><li>Neural decoding</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="quant" class="band alt">
+  <div class="wrap">
+    <h2 class="sec"><span class="num">02</span> Quantitative research</h2>
+    <p class="sec-note">Applying the same generative time-series machinery to equity markets — with the evaluation discipline the domain demands.</p>
+
+    <article class="entry">
+      <div class="entry-meta">
+        <span class="tag">Signal research</span>
+        <span class="when">Independent</span>
+      </div>
+      <div class="entry-body">
+        <h3>FGNO signal research for equity alpha</h3>
+        <p>
+          I pretrained an <strong>FGNO Transformer</strong> backbone with self-supervised flow
+          matching on STFT spectrograms of daily equity price and volume data, then probed the frozen
+          representations with 8 downstream regressors across a <strong>36-way (layer, flow-time)
+          grid</strong> to predict 5-day forward returns.
+        </p>
+        <p>
+          The mean-variance-optimized long/short signal came back at a <strong>pooled Sharpe of
+          +2.07</strong>. I killed it. Overlapping 5-day labels induce autocorrelation that inflates
+          naive significance; under <strong>Newey–West</strong> correction and a bootstrap the result
+          did not survive, and <strong>walk-forward re-validation</strong> turned it into a Sharpe of
+          −7 to −10. The finding here is the failure mode, and how cheaply a 36-way probe grid
+          manufactures one that looks real.
+        </p>
+        <ul class="chips">
+          <li>Self-supervised pretraining</li><li>Newey–West</li><li>Bootstrap inference</li><li>Walk-forward validation</li><li>MVO</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="entry-meta">
+        <span class="tag">Generative modeling</span>
+        <span class="when">Independent</span>
+      </div>
+      <div class="entry-body">
+        <h3>Trajectory flow matching for financial time series</h3>
+        <p>
+          I adapted <strong>Trajectory Flow Matching</strong> — a stochastic bridge model with a
+          causal Transformer history encoder — to estimate the <em>joint</em> next-day distribution
+          of equity returns, volatility, abnormal volume, and liquidity, sampled through Monte Carlo
+          scenario generation. Joint, because those four quantities are what a position actually
+          faces together.
+        </p>
+        <p>
+          Benchmarked against Neural SDE, probabilistic Transformer, and LightGBM quantile baselines
+          over four expanding-window folds, scored on <strong>energy score, QLIKE, and rank IC</strong>.
+          Backtests were dollar- and sector-neutral long/short, with turnover, transaction costs,
+          market impact, and borrow fees charged against the P&amp;L.
+        </p>
+        <ul class="chips">
+          <li>Stochastic bridges</li><li>Causal Transformers</li><li>Monte Carlo</li><li>Energy score / QLIKE</li><li>Neutralized backtests</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="experience" class="band">
+  <div class="wrap">
+    <h2 class="sec"><span class="num">03</span> Experience</h2>
+
+    <ol class="timeline">
+      <li>
+        <div class="tl-when">Sep 2026 — Present</div>
+        <div class="tl-body">
+          <h3>Google <span class="role">Software Engineer</span></h3>
+          <p class="sub">Trusted Partner Cloud Infrastructure</p>
+          <p>Building change-management and compatibility infrastructure for deploying Google services
+             across isolated cloud environments.</p>
+        </div>
+      </li>
+      <li>
+        <div class="tl-when">Jun 2025 — Sep 2025</div>
+        <div class="tl-body">
+          <h3>NVIDIA <span class="role">AI Applied Research Intern</span></h3>
+          <p class="sub">USD Smart-Materials</p>
+          <p>Built a generative pipeline — <strong>SDXL and FLUX</strong> diffusion/flow-matching models
+             with ControlNet — producing photorealistic renderings that substantially raised a
+             vision-language model's material-prediction accuracy on CAD inputs. Proposed and prototyped
+             a video-based approach on NVIDIA's <strong>COSMOS</strong> model for temporally coherent,
+             multi-view-consistent outputs feeding downstream VLM analysis.</p>
+        </div>
+      </li>
+      <li>
+        <div class="tl-when">Jun 2024 — Dec 2024</div>
+        <div class="tl-body">
+          <h3>NVIDIA <span class="role">AI Applied Research Intern</span></h3>
+          <p class="sub">USD Code</p>
+          <p>Built a persona-driven synthetic data-generation pipeline (LangChain, GPT-4, LLaMA3) that
+             expanded NVIDIA's proprietary LLM training set <strong>10&times;</strong> and lifted eval
+             accuracy <strong>10%</strong>. Improved answer quality through a RAG pipeline, LLaMA3
+             fine-tuning, and a FAISS vector database.</p>
+        </div>
+      </li>
+      <li>
+        <div class="tl-when">Mar 2025 — Jun 2026</div>
+        <div class="tl-body">
+          <h3>Stratus Data <span class="role">AI Applied Research Intern</span></h3>
+          <p>Architected a multi-agent data-analysis system on <strong>LangGraph/MCP</strong> in which a
+             supervisor LLM delegates to specialized agents — including a Cortex Analyst agent that
+             queries a Snowflake database directly from natural language — to automate business-insight
+             discovery.</p>
+        </div>
+      </li>
+      <li>
+        <div class="tl-when">Jun 2023 — Sep 2023</div>
+        <div class="tl-body">
+          <h3>Google <span class="role">STEP Intern</span></h3>
+          <p>Fixed bugs in and extended a server-side Google Play debugging feature, giving developers
+             visibility into app, item/non-item card, and Play Store stream diagnostics.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="about" class="band alt">
+  <div class="wrap about-grid">
+    <div>
+      <h2 class="sec"><span class="num">04</span> Background</h2>
+      <h3 class="sub-h">Education</h3>
+      <p class="edu">
+        <strong>California Institute of Technology</strong><br>
+        B.S. Computer Science &amp; B.S. Information and Data Science &middot; GPA 4.1/4.0<br>
+        <span class="muted">Sep 2022 – Jun 2026</span>
+      </p>
+      <p class="coursework">
+        <span class="muted">Coursework:</span> Statistical Foundations of Machine Learning &middot;
+        Quantitative Risk and Portfolio Management &middot; Machine Learning &amp; Data Mining &middot;
+        Statistical Inference &middot; LLMs for Reasoning &middot; Computation Theory &middot; Algorithms
+      </p>
+    </div>
+    <div>
+      <h3 class="sub-h">Toolkit</h3>
+      <dl class="skills">
+        <dt>Languages</dt>
+        <dd>Python &middot; C/C++ &middot; R &middot; Java &middot; OCaml &middot; Haskell</dd>
+        <dt>Frameworks</dt>
+        <dd>PyTorch &middot; TensorFlow &middot; LangChain &middot; LangGraph</dd>
+        <dt>Methods</dt>
+        <dd>Generative modeling (diffusion, flow matching) &middot; time-series modeling &middot;
+            self-supervised learning &middot; statistical inference &middot; backtesting &middot;
+            Monte Carlo simulation &middot; SHAP</dd>
+        <dt>Tools</dt>
+        <dd>Linux &middot; FAISS &middot; Snowflake &middot; Git</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p class="lede">
+      Open to conversations about generative time-series modeling, representation learning, and
+      quantitative research.
+    </p>
+    <ul class="links big">
+      <li><a href="mailto:dhnguyen@caltech.edu">dhnguyen@caltech.edu</a></li>
+      <li><a href="https://github.com/DNH35">GitHub</a></li>
+      <li><a href="duy-nguyen-resume.pdf">Resume</a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>&copy; <span id="yr">2026</span> Duy Nguyen</span>
+    <span class="muted">Pasadena, CA</span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
