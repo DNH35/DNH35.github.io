@@ -22,7 +22,7 @@
     <a class="mark" href="#top">DN</a>
     <nav class="nav">
       <a href="#research">Research</a>
-      <a href="#quant">Quant</a>
+      <a href="#independent">Independent</a>
       <a href="#experience">Experience</a>
       <a href="#about">About</a>
     </nav>
@@ -132,10 +132,10 @@
   </div>
 </section>
 
-<section id="quant" class="band alt">
+<section id="independent" class="band alt">
   <div class="wrap">
-    <h2 class="sec"><span class="num">02</span> Quantitative research</h2>
-    <p class="sec-note">Applying the same generative time-series machinery to equity markets — with the evaluation discipline the domain demands.</p>
+    <h2 class="sec"><span class="num">02</span> Independent research</h2>
+    <p class="sec-note">Self-directed projects in quantitative signal research and medical imaging.</p>
 
     <article class="entry">
       <div class="entry-meta">
@@ -166,26 +166,23 @@
 
     <article class="entry">
       <div class="entry-meta">
-        <span class="tag">Generative modeling</span>
+        <span class="tag">Computer vision</span>
         <span class="when">Independent</span>
       </div>
       <div class="entry-body">
-        <h3>Trajectory flow matching for financial time series</h3>
+        <h3>Automated anomaly detection in radiograph images</h3>
         <p>
-          I adapted <strong>Trajectory Flow Matching</strong> — a stochastic bridge model with a
-          causal Transformer history encoder — to estimate the <em>joint</em> next-day distribution
-          of equity returns, volatility, abnormal volume, and liquidity, sampled through Monte Carlo
-          scenario generation. Joint, because those four quantities are what a position actually
-          faces together.
+          I trained multi-class, multi-label classifiers on roughly <strong>50K radiographs</strong>
+          spanning nine findings, comparing <strong>ViT, ResNet, and DenseNet</strong> backbones with
+          transfer learning on an HPC cluster.
         </p>
         <p>
-          Benchmarked against Neural SDE, probabilistic Transformer, and LightGBM quantile baselines
-          over four expanding-window folds, scored on <strong>energy score, QLIKE, and rank IC</strong>.
-          Backtests were dollar- and sector-neutral long/short, with turnover, transaction costs,
-          market impact, and borrow fees charged against the P&amp;L.
+          The findings are heavily imbalanced, so I used label-aware augmentation, weighted
+          objectives, and stratified evaluation, and compared the models systematically under the
+          same setup.
         </p>
         <ul class="chips">
-          <li>Stochastic bridges</li><li>Causal Transformers</li><li>Monte Carlo</li><li>Energy score / QLIKE</li><li>Neutralized backtests</li>
+          <li>Vision Transformers</li><li>ResNet / DenseNet</li><li>Transfer learning</li><li>Class imbalance</li><li>HPC</li>
         </ul>
       </div>
     </article>
