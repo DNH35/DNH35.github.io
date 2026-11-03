@@ -72,7 +72,8 @@
         <span class="when">Anima AI + Science Lab</span>
       </div>
       <div class="entry-body">
-        <h3>Resolution-invariant representation learning for time series</h3>
+        <h3>Self-Supervised Learning via Flow-Guided Neural Operator on Time-Series Data</h3>
+        <p class="authors"><strong>Duy Nguyen</strong>, Jiachen Yao, Jiayun Wang, Julius Berner, Animashree Anandkumar</p>
         <p>
           Signals arrive at different sampling rates, and most self-supervised time-series models
           quietly assume they do not. I developed a framework that pairs <strong>flow
@@ -91,6 +92,7 @@
         <ul class="chips">
           <li>Flow matching</li><li>STFT / Superlet</li><li>Neural operators</li><li>Multi-level supervision</li><li>PyTorch</li>
         </ul>
+        <a class="paper-link" href="https://arxiv.org/abs/2602.12267" target="_blank" rel="noopener">arXiv:2602.12267 &rarr;</a>
       </div>
     </article>
 
@@ -100,11 +102,20 @@
         <span class="when">Yue Lab &amp; Dyer Lab</span>
       </div>
       <div class="entry-body">
-        <h3>Positional encoding for neural time series without electrode geometry</h3>
+        <h3>A scalable self-supervised method for modeling human intracranial recordings during natural behavior</h3>
+        <p class="authors">Shivashriganesh P. Mahato, Jingyun Xiao, Alexandre Andre, Geeling Chau, Wenrui Ma, Ian Knight, <strong>Duy Nguyen</strong>, Lawrence Jianqiao Hu, Bingni Brunton, Michael S. Beauchamp, Bijan Pesaran, Sergey Shuvaev, Eva L. Dyer</p>
         <p>
-          Masked-autoencoding transformers on neural recordings typically need to know where each
-          electrode sits in 3D space — a requirement that breaks transfer across subjects, rigs, and
-          implant layouts. I designed a positional encoding that recovers the needed structure from
+          Intracranial EEG from neurosurgical patients is hard to use at scale: electrode placement,
+          channel layout, and behavior differ across people and sessions. The paper introduces a
+          self-supervised, Perceiver-based framework that masks channels and reconstructs them from
+          the rest, pretraining across participants without labels; fine-tuning improves decoding
+          on several downstream tasks.
+        </p>
+        <p>
+          My contribution was the positional encoding. Masked-autoencoding models on neural
+          recordings typically need to know where each electrode sits in 3D space — a requirement
+          that breaks transfer across subjects, rigs, and implant layouts. I designed an encoding
+          that recovers the needed structure from
           the <strong>1D time series alone</strong>, removing the dependence on electrode coordinates
           entirely.
         </p>
@@ -113,8 +124,9 @@
           baselines, and the resulting model pretrains on datasets whose geometry was never recorded.
         </p>
         <ul class="chips">
-          <li>Self-supervised learning</li><li>Masked autoencoders</li><li>Transformers</li><li>Neural decoding</li>
+          <li>Self-supervised learning</li><li>Masked autoencoders</li><li>Perceiver</li><li>Neural decoding</li>
         </ul>
+        <a class="paper-link" href="https://openreview.net/forum?id=CdP8Y4K4fz" target="_blank" rel="noopener">OpenReview &rarr;</a>
       </div>
     </article>
   </div>

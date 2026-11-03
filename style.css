@@ -164,6 +164,13 @@ h1{
   letter-spacing:-.01em; margin:0 0 1rem;
 }
 .entry-body p{margin:0 0 1rem; color:var(--ink-2); max-width:66ch}
+.entry-body .authors{font-size:.85rem; color:var(--ink-3); margin:-.4rem 0 1rem}
+.paper-link{
+  display:inline-block; margin-top:.4rem;
+  font-family:"JetBrains Mono",monospace; font-size:.74rem; letter-spacing:.04em;
+  color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-soft);
+}
+.paper-link:hover{border-bottom-color:var(--accent)}
 .chips{list-style:none; display:flex; flex-wrap:wrap; gap:.45rem; padding:0; margin:1.3rem 0 0}
 .chips li{
   font-size:.74rem; color:var(--ink-3);
